@@ -29,9 +29,9 @@ const jokesController = {
     try {
       const randomJoke = jokes[Math.floor(Math.random() * jokes.length)]
       res.status(200).json(randomJoke)
-      console.log("GET - /jokes/random-joke")
+      console.log("GET - /jokes/random")
     } catch (e) {
-      console.error("Error | GET - /jokes/random-joke - ", e)
+      console.error("Error | GET - /jokes/random - ", e)
     }
   }
 }

@@ -7,6 +7,6 @@ router.get('/', jokesController.getJokes)
 
 router.get('/joke/:id', jokesController.getJokeById)
 
-router.get('/random-joke', jokesController.getRandomJoke)
+router.get('/random', jokesController.getRandomJoke)
 
 module.exports = router

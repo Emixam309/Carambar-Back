@@ -7,8 +7,8 @@ const app = express()
 const cors = require('cors')
 const port = 3000
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express')
+const swaggerJsdoc = require('swagger-jsdoc')
 
 const options = {
   definition: {
@@ -16,18 +16,18 @@ const options = {
     info: {
       title: 'Carambar Jokes API',
     },
-    servers: [{ url: '/api/jokes' }]
+    servers: [{url: '/api/jokes'}]
   },
   apis: ['./routes/*.js'], // files containing annotations as above
-};
-const swaggerSpec = swaggerJsdoc(options);
+}
+const swaggerSpec = swaggerJsdoc(options)
 
 
 app.use(express.json())
 app.use(cors())
 
 app.use('/api/jokes', jokesRouter)
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
